@@ -19,7 +19,7 @@
             
               <div class="navbar-header">
               
-                  <a class="navbar-brand">Online Recipes</a>
+                  <a class="navbar-brand" href="index.php">Online Recipes</a>
                   <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
@@ -30,7 +30,7 @@
               </div>
               <div class="navbar-collapse collapse" id="navbarCollapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     
                     <li><a href="#">Contact us</a></li>
                   </ul>
@@ -48,110 +48,17 @@
 
             <!-- Recipe Display Column -->
         <div class="col-md-8 recipe-area">
-            <div class="row">
-                   
-                    <div class="col-md-4">
-                        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150"></a>
-                        <h4>Chicken Korma</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,</p>
-
-                           <div class="container">
-
-                            <div class="row lead">
-                                <div id="stars" class="starrr"></div>
-                                <span id="count" class="hidden">4</span>
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-                <div class="col-md-4">
-                    <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150"></a>
-                    <h4>Chicken Korma</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,</p>
-                    
-                       <div class="container">
-                        
-                        <div class="row lead">
-                            <div id="stars" class="starrr"></div>
-                            <span id="count" class="hidden">3</span>
-                        </div>
-
-                        
-                    </div>
-                </div>
-                <div class="col-md-4">
-                     <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150"></a>
-                    <h4>Chicken Korma</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,</p>
-                    
-                       <div class="container">
-                        
-                            <div class="row lead">
-                                <div id="stars" class="starrr"></div>
-                                <span id="count" class="hidden">5</span>
-                            </div>
-
-
-                        </div>
-                </div><!-- col-md-4-->
-            </div><!--row-->
-            
-            <div class="row">
-                   
-                    <div class="col-md-4">
-                        <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150"></a>
-                        <h4>Chicken Korma</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,</p>
-
-                           <div class="container">
-
-                            <div class="row lead">
-                                <div id="stars" class="starrr"></div>
-                                <span id="count" class="hidden">4</span>
-                            </div>
-
-
-                        </div>
-
-
-                    </div>
-                <div class="col-md-4">
-                    <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150"></a>
-                    <h4>Chicken Korma</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,</p>
-                    
-                       <div class="container">
-                        
-                        <div class="row lead">
-                            <div id="stars" class="starrr"></div>
-                            <span id="count" class="hidden">3</span>
-                        </div>
-
-                        
-                    </div>
-                </div>
-                <div class="col-md-4">
-                     <a href="http://placeholder.com"><img src="http://via.placeholder.com/200x150"></a>
-                    <h4>Chicken Korma</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,</p>
-                    
-                       <div class="container">
-                        
-                            <div class="row lead">
-                                <div id="stars" class="starrr"></div>
-                                <span id="count" class="hidden">5</span>
-                            </div>
-
-
-                        </div>
-                </div><!-- col-md-4-->
-            </div><!--row-->
-            
+          
+            <?php
+                if (isset($_GET["id"])){
+                    include("includes/single.php");
+                } else {
+                    include("includes/main-content.php"); 
+                }
+            ?>
+        
         </div><!-- col-md-8 recipe-display -->
-<!--recipe display column end-->
+        <!--recipe display column end-->
          <!--  Sidebar Widgets Column start-->
         <div class="col-md-4">
 
