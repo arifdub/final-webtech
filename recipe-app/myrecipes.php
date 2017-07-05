@@ -2,34 +2,30 @@
 
  <?php include("includes/header.php"); ?>
   
-   <div class="container">
-    <div class="row">
-
-            <!-- Recipe Display Column -->
-        <div class="col-md-8 recipe-area">
-          
-            <?php
-                if (isset($_GET["id"])){
-                    include("includes/single.php");
-                } else {
-                    include("includes/main-content.php"); 
-                }
-            ?>
-        
-        </div><!-- col-md-8 recipe-display -->
-        <!--recipe display column end-->
-         <!--  Sidebar Widgets Column start-->
-        <div class="col-md-4">
-
-            
-            <?php include("includes/sidebar.php"); ?>
-
-        </div>
-<!--        col-sidebar end-->
-
-     </div>
-        <!-- /.row -->
-</div> 
+    <div class="container my-recipes main-area">
+         <div class="row">
+             <div class="col-md-12">
+                 <h2 class="text-center">My Recipes</h2>
+                 <table class="table">
+                     <th>Photo</th>
+                     <th>Title</th>
+                     <th>Description</th>
+                     <th>Edit</th>
+                     
+                     <th>Delete</th>
+                     <tr>
+                         <td><img src="http://via.placeholder.com/100x100">"</td>
+                         <td>Chicken Korma</td>
+                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ducimus, iste! Quisquam iste earum ipsam officiis totam veritatis ex, sed commodi minus rerum magni delectus, placeat odit nam quos, accusantium.</td>
+                         <td><button class="btn btn-info">Edit</button></td>
+                         
+                         <td><button class="btn btn-danger">Delete</button></td>
+                     </tr>
+                 </table>
+             </div>
+         </div>
+    
+    </div> 
 <!--   container -->
     <!--Login form-->    
       <form method="post" id="loginform">

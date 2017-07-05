@@ -2,34 +2,34 @@
 
  <?php include("includes/header.php"); ?>
   
-   <div class="container">
-    <div class="row">
-
-            <!-- Recipe Display Column -->
-        <div class="col-md-8 recipe-area">
-          
-            <?php
-                if (isset($_GET["id"])){
-                    include("includes/single.php");
-                } else {
-                    include("includes/main-content.php"); 
-                }
-            ?>
-        
-        </div><!-- col-md-8 recipe-display -->
-        <!--recipe display column end-->
-         <!--  Sidebar Widgets Column start-->
-        <div class="col-md-4">
-
-            
-            <?php include("includes/sidebar.php"); ?>
-
-        </div>
-<!--        col-sidebar end-->
-
-     </div>
-        <!-- /.row -->
-</div> 
+    <div class="container user-page main-area">
+         <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                  <h2 class="text-center">Add a New Recipe</h2>
+                  <form>
+                     
+                      <div class="form-group">
+                          <label for="title" class="">Title</label>
+                          <input type="text" name="title" class="form-control">
+                      </div>
+                     <div class="form-group">
+                          <label for="desc" class="">Description</label>
+                          <textarea name="desc" class="form-control" rows="15"></textarea>
+                      </div>
+                       <div class="form-group">
+                          <label for="pic" class="">Picture</label>
+                          <input type="file" name="pic" class="">
+                      </div>
+                      <div class="form-group upload-btn">
+                          <button class="btn btn-success pull-right">Upload Recipe</button>
+                      </div>
+                     
+                      
+                  </form>
+              </div>
+          </div>
+    
+    </div> 
 <!--   container -->
     <!--Login form-->    
       <form method="post" id="loginform">

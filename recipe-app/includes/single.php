@@ -1,6 +1,6 @@
 
                     <div class="col-md-12">
-                        <a href="http://placeholder.com"><img src="http://via.placeholder.com/700x350"></a>
+                        <img src="http://via.placeholder.com/700x350">
                         <h4>Chicken Korma</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,

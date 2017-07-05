@@ -2,34 +2,33 @@
 
  <?php include("includes/header.php"); ?>
   
-   <div class="container">
-    <div class="row">
+    <div class="container user-page main-area">
+     <div class="row profile">
+              <div class="col-md-offset-3 col-md-6">
 
-            <!-- Recipe Display Column -->
-        <div class="col-md-8 recipe-area">
-          
-            <?php
-                if (isset($_GET["id"])){
-                    include("includes/single.php");
-                } else {
-                    include("includes/main-content.php"); 
-                }
-            ?>
-        
-        </div><!-- col-md-8 recipe-display -->
-        <!--recipe display column end-->
-         <!--  Sidebar Widgets Column start-->
-        <div class="col-md-4">
-
-            
-            <?php include("includes/sidebar.php"); ?>
-
-        </div>
-<!--        col-sidebar end-->
-
-     </div>
-        <!-- /.row -->
-</div> 
+                  <h2>User's Profile:</h2>
+                  <div class="table-responsive table-striped">
+                      <table class="table table-hover table-condensed table-bordered">
+                          <tr data-target="#updateusername" data-toggle="modal">
+                              <td>Username</td>
+                              <td><?php  ?></td>
+                          </tr>
+                          <tr data-target="#updateemail" data-toggle="modal">
+                              <td>Email</td>
+                              <td><?php  ?></td>
+                          </tr>
+                          <tr data-target="#updatepassword" data-toggle="modal">
+                              <td>Password</td>
+                              <td>hidden</td>
+                          </tr>
+                      </table>
+                  
+                  </div>
+              
+              </div>
+          </div>
+    
+    </div> 
 <!--   container -->
     <!--Login form-->    
       <form method="post" id="loginform">
