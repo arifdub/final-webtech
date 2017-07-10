@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+
 
  <?php include("includes/header.php"); ?>
-  
-   <div class="container">
+   
+   <div class="container main-area">
     <div class="row">
 
             <!-- Recipe Display Column -->
         <div class="col-md-8 recipe-area">
           
+
             <?php
                 if (isset($_GET["id"])){
                     include("includes/single.php");
@@ -18,7 +19,8 @@
         
         </div><!-- col-md-8 recipe-display -->
         <!--recipe display column end-->
-         <!--  Sidebar Widgets Column start-->
+        
+          <!--  Sidebar Widgets Column start-->
         <div class="col-md-4">
 
             

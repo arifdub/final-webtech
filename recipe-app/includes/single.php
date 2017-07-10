@@ -1,19 +1,20 @@
-
+<div class="row">
                     <div class="col-md-12">
-                        <img src="http://via.placeholder.com/700x350">
-                        <h4>Chicken Korma</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,
-                           </p>
+                            <img src="http://via.placeholder.com/700x350">
+                            <h4>Chicken Korma</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo obcaecati explicabo soluta sapiente quia alias aut omnis,
+                               </p>
 
-                        <div class="comment-area"></div>   
-                        <div class="form-group">
-                          <label for="comment">Comment:</label>
-                          <textarea class="form-control" rows="5" id="comment"></textarea>
-                          </div>
-                          <div class="form-group">
-                          <button type="submit" class="btn btn-success" name="comment">Leave Comment</button>
+                            <div class="comment-area"></div>   
+                            <div class="form-group">
+                              <label for="comment">Comment:</label>
+                              <textarea class="form-control" rows="5" id="comment"></textarea>
+                              </div>
+                              <div class="form-group">
+                              <button type="submit" class="btn btn-success pull-right" name="comment">Leave Comment</button>
+                            </div>
+
                         </div>
 
-                        </div>
-
+</div>

@@ -16,6 +16,21 @@
                           <label for="desc" class="">Description</label>
                           <textarea name="desc" class="form-control" rows="15"></textarea>
                       </div>
+                      <div class="form-group">
+                          <label for="catagories" class="">Catagories</label>
+                          <select class="form-control" name="catagories">
+                              <option>
+                                  Indian Food
+                              </option>
+                              <option>
+                                  Chinese Food
+                              </option>
+                              <option>
+                                  Russian Food
+                              </option>
+                          </select>
+                      </div>
+                      
                        <div class="form-group">
                           <label for="pic" class="">Picture</label>
                           <input type="file" name="pic" class="">
