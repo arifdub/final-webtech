@@ -5,37 +5,50 @@ if(!isset($_SESSION['user_id'])){
 
 ?>
 
-
-<!DOCTYPE html>
  
+
+ <!DOCTYPE html>
 
  <?php include("includes/header.php"); ?>
   
-    <div class="container user-page main-area">
-     <div class="row profile">
-              <div class="col-md-offset-3 col-md-6">
-
-                  <h2>User's Profile:</h2>
-                  <div class="table-responsive table-striped">
-                      <table class="table table-hover table-condensed table-bordered">
-                          <tr data-target="#updateusername" data-toggle="modal">
-                              <td>Username</td>
-                              <td><?php echo $_SESSION['username'];  ?></td>
-                          </tr>
-                          <tr data-target="#updateemail" data-toggle="modal">
-                              <td>Email</td>
-                              <td><?php echo $_SESSION['email']  ?></td>
-                          </tr>
-                          <tr data-target="#updatepassword" data-toggle="modal">
-                              <td>Password</td>
-                              <td>hidden</td>
-                          </tr>
-                      </table>
-                  
-                  </div>
-              
-              </div>
-          </div>
+    <div class="container my-recipes main-area">
+         <div class="row">
+             <div class="col-md-12">
+                 <h2 class="text-center">My Posts</h2>
+                 <table class="table">
+                    <?php 
+                        include("db.php");
+                        $user_id = $_SESSION['user_id'];
+                        $run = $conn->prepare("select * from posts where user_id = $user_id");
+                        $result =$run->execute();
+                        if($run->rowCount()==0){
+                            echo "<h3>You have no Post to show</h3>";
+                        }else {
+                            
+                        
+                            
+                      
+                     ?>
+                     <th>Photo</th>
+                     <th>Title</th>
+                     <th>Description</th>
+                     <th>Edit</th>
+                     
+                     <th>Delete</th>
+                     <?php while($row = $run->fetch(PDO::FETCH_ASSOC)){ ?>
+                     <tr>
+                        
+                         <td><img src="img/<?php echo $row['post_pic']; ?>" width="50" height="50"></td>
+                         <td><?php echo $row['post_title']; ?></td>
+                         <td><?php echo substr($row['post_desc'],0, 100) ?></td>
+                         <td><a class="btn btn-info" href="edit_post.php?id=<?php echo $row['post_id']; ?>" ><span class='glyphicon glyphicon-edit'></span></a></td>
+                         
+                         <td><a class="btn btn-danger" href="delete_post.php?id=<?php echo $row['post_id']; ?>" onclick="return confirm('Post will be delete?');" ><span class='glyphicon glyphicon-remove'></span></a></td>
+                         <?php } } ?><!--end while loop-->
+                     </tr>
+                 </table>
+             </div>
+         </div>
     
     </div> 
 <!--   container -->

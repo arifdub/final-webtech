@@ -1,29 +1,75 @@
+<?php session_start();
+if(!isset($_SESSION['user_id'])){
+    header("location:index.php");
+}
+
+?>
+
 <!DOCTYPE html>
+ 
 
  <?php include("includes/header.php"); ?>
   
-    <div class="container my-recipes main-area">
+    <div class="container user-page main-area">
          <div class="row">
-             <div class="col-md-12">
-                 <h2 class="text-center">My Recipes</h2>
-                 <table class="table">
-                     <th>Photo</th>
-                     <th>Title</th>
-                     <th>Description</th>
-                     <th>Edit</th>
+              <div class="col-md-10 col-md-offset-1">
+                  
+                  <form class="form-inline" id="add_catagory" method="post">
+                      <h3>Add a New Catagory</h3>
+                      <div id="catmessage"></div>
+                      <div class="form-group">
+                          <label for="title" class="">Catagory Name</label>
+                          <input type="text" name="catname" class="form-control">
+                          <input type= "submit" class="btn btn-success" value="Add Catagory">
+                      </div>
+                  </form>
+                  <h2 class="text-center">Add a New Recipe</h2>
+                  <div id="postmessage"></div>
+                  <form id="add_new_post" method="post" enctype="multipart/form-data" action="add_new_post.php">
                      
-                     <th>Delete</th>
-                     <tr>
-                         <td><img src="http://via.placeholder.com/100x100">"</td>
-                         <td>Chicken Korma</td>
-                         <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ducimus, iste! Quisquam iste earum ipsam officiis totam veritatis ex, sed commodi minus rerum magni delectus, placeat odit nam quos, accusantium.</td>
-                         <td><button class="btn btn-info">Edit</button></td>
-                         
-                         <td><button class="btn btn-danger">Delete</button></td>
-                     </tr>
-                 </table>
-             </div>
-         </div>
+                      <div class="form-group">
+                          <label for="title" class="">Title</label>
+                          <input type="text" name="post_title" class="form-control">
+                      </div>
+                     <div class="form-group">
+                          <label for="desc" class="">Description</label>
+                          <textarea name="post_desc" class="form-control" rows="15"></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="catagories" class="">Catagories</label>
+                          <select class="form-control" name="cat_id">
+                             <?php
+                              include("db.php");
+                              $run = $conn->prepare("select * from catagories");
+                              $result = $run->execute();
+                              
+                              while($row = $run->fetch(PDO::FETCH_ASSOC)){
+                                  
+                              
+                              ?>
+                              <option value= <?php echo $row['cat_id']; ?> >
+                                  <?php
+                                        echo $row['cat_name'];
+                                      }
+                                    ?>
+                              </option>
+                              
+                              
+                          </select>
+                      </div>
+                      
+                       <div class="form-group">
+                          <label for="post_pic" class="">Picture</label>
+                          <input type="file" name="post_pic" id="post_pic">
+                      </div>
+                      <div class="form-group upload-btn">
+                          <input type="submit" value="Upload Recipe" class="btn btn-success pull-right">
+                      </div>
+                     
+                      
+                  </form>
+              </div>
+          </div>
     
     </div> 
 <!--   container -->

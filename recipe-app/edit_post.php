@@ -1,45 +1,70 @@
+<?php session_start();
+if(!isset($_SESSION['user_id'])){
+    header("location:index.php");
+}
+include("db.php");
+$post_id = $_GET['id'];
+$run = $conn->prepare("select * from posts where post_id = :post");
+$run->bindParam(':post', $post_id);
+$run->execute();
+while($row= $run->fetch(PDO::FETCH_ASSOC)){
+    
+
+?>
+
 <!DOCTYPE html>
+ 
 
  <?php include("includes/header.php"); ?>
   
     <div class="container user-page main-area">
          <div class="row">
               <div class="col-md-10 col-md-offset-1">
-                  <h2 class="text-center">Add a New Recipe</h2>
-                  <form>
-                     
+              
+                  <h2 class="text-center">Edit  Post</h2>
+                  <div id="postmessage"></div>
+                  <form id="add_new_post" method="post" enctype="multipart/form-data" action="update_post.php">
+                     <input type="text" value="<?php echo $post_id; ?>" hidden="hidden" name="post_id">
                       <div class="form-group">
                           <label for="title" class="">Title</label>
-                          <input type="text" name="title" class="form-control">
+                          <input type="text" name="post_title" class="form-control" value="<?php echo $row['post_title']; ?>">
                       </div>
                      <div class="form-group">
                           <label for="desc" class="">Description</label>
-                          <textarea name="desc" class="form-control" rows="15"></textarea>
+                          <textarea name="post_desc" class="form-control" rows="15"><?php echo $row['post_desc']; ?></textarea>
                       </div>
                       <div class="form-group">
                           <label for="catagories" class="">Catagories</label>
-                          <select class="form-control" name="catagories">
-                              <option>
-                                  Indian Food
+                          <select class="form-control" name="cat_id">
+                             <?php
+                              include("db.php");
+                              $run = $conn->prepare("select * from catagories");
+                              $result = $run->execute();
+                              
+                              while($row = $run->fetch(PDO::FETCH_ASSOC)){
+                                  
+                              
+                              ?>
+                              <option value= <?php echo $row['cat_id']; ?> >
+                                  <?php
+                                        echo $row['cat_name'];
+                                      } //    catagory while loop end here
+                                    ?>
                               </option>
-                              <option>
-                                  Chinese Food
-                              </option>
-                              <option>
-                                  Russian Food
-                              </option>
+                              
+                              
                           </select>
                       </div>
                       
                        <div class="form-group">
-                          <label for="pic" class="">Picture</label>
-                          <input type="file" name="pic" class="">
+                          <label for="post_pic" class="">Picture</label>
+                          <input type="file" name="post_pic" id="post_pic">
                       </div>
                       <div class="form-group upload-btn">
-                          <button class="btn btn-success pull-right">Upload Recipe</button>
+                          <input type="submit" value="Upload Recipe" class="btn btn-success pull-right">
                       </div>
                      
-                      
+                  <?php } ?>   <!--                  post while loop end here -->
                   </form>
               </div>
           </div>

@@ -25,6 +25,7 @@ html,body{
 }
 .recipe-box{
     margin-bottom: 50px;
+    box-sizing: border-box;
 }
 .recipe-pic{
     position: relative;
@@ -37,7 +38,9 @@ html,body{
     
     
 }
-
+.activate{
+    margin-top: 100px;
+}
 .green{
     background-color: rgba(114,190,35,0.8);   
 }
@@ -53,6 +56,17 @@ html,body{
 }
 .upload-btn{
   
+}
+.add-new-post{
+    margin-top: 50px;
+}
+.post-img{
+    float: left;
+    width: 180px;
+    height: 190px;
+}
+.content{
+    float: right;
 }
 
 /*Style the footer*/

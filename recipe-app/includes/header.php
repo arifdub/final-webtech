@@ -37,10 +37,23 @@
                     <li><a href="#">Contact us</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
+                  <?php if(!isset($_SESSION['user_id'])){ ?>
                    <li><a href="#signupModal" data-toggle="modal">Sign Up</a>
                     <li><a href="#loginModal" data-toggle="modal">Login</a></li>
+                    <?php   }else{ ?>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="profile.php">My Profile</a></li>
+                    <li><a href="myposts.php">My Posts</a></li>
+                    <li><a href="newpost.php">New Posts</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="logout.php?logout=1">LogOut</a></li>
+                   <?php } ?>
                   </ul>
-              
+                  </li>
+                  </ul>
+                  
+
               </div>
           </div>
       

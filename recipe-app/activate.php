@@ -1,46 +1,40 @@
-<?php session_start();
-if(!isset($_SESSION['user_id'])){
-    header("location:index.php");
-}
-
-?>
-
-
 <!DOCTYPE html>
- 
 
  <?php include("includes/header.php"); ?>
   
-    <div class="container user-page main-area">
-     <div class="row profile">
-              <div class="col-md-offset-3 col-md-6">
-
-                  <h2>User's Profile:</h2>
-                  <div class="table-responsive table-striped">
-                      <table class="table table-hover table-condensed table-bordered">
-                          <tr data-target="#updateusername" data-toggle="modal">
-                              <td>Username</td>
-                              <td><?php echo $_SESSION['username'];  ?></td>
-                          </tr>
-                          <tr data-target="#updateemail" data-toggle="modal">
-                              <td>Email</td>
-                              <td><?php echo $_SESSION['email']  ?></td>
-                          </tr>
-                          <tr data-target="#updatepassword" data-toggle="modal">
-                              <td>Password</td>
-                              <td>hidden</td>
-                          </tr>
-                      </table>
-                  
-                  </div>
-              
-              </div>
-          </div>
+    <div class="container">
+        <div class="row activate">
+            <div class="col-md-10 col-md-offset-1">
+                <h2>Activate Your Account</h2>
+                <?php 
+                include("db.php");
+                
+                if(!isset($_GET['email']) || !isset($_GET['key'])){
+                    echo "<div class='alert alert-danger'>There was a problem Check your emaill to and click the link again</div>";
+                    exit;
+                }
+                    $email = $_GET['email'];
+                    $key = $_GET['key'];
+                    
+                    $run = $conn->prepare("Update users SET activation = 'activated' where (email = :email AND activation= :key) limit 1");
+                    $run->bindParam(':email', $email);
+                    $run->bindParam(':key', $key);
+                    $result = $run->execute();
+                    if ($result){
+                        echo "<div class='alert alert-success'>YOur account has been successfully activated please click login above</div>";
+                    } else {
+                        echo "<div class='alert alert-danger'>Your account could not be activated please try again</div>";
+                    }
+                    
+                
+                ?>
+            </div>
+        </div>
+    </div>
     
-    </div> 
-<!--   container -->
-    <!--Login form-->    
-      <form method="post" id="loginform">
+    
+    
+    <form method="post" id="loginform">
         <div class="modal" id="loginModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -174,5 +168,6 @@ if(!isset($_SESSION['user_id'])){
       </div>
       </div>
       </form>
+
     <!-- Footer-->
      <?php include("includes/footer.php"); ?>
