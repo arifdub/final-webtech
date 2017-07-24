@@ -26,15 +26,15 @@ var __slice = [].slice;
       }
       this.createStars();
       this.syncRating();
-      this.$el.on('mouseover.starrr', 'span', function(e) {
-        return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);
-      });
+//      this.$el.on('mouseover.starrr', 'span', function(e) {
+//        return _this.syncRating(_this.$el.find('span').index(e.currentTarget) + 1);
+//      });
       this.$el.on('mouseout.starrr', function() {
         return _this.syncRating();
       });
-      this.$el.on('click.starrr', 'span', function(e) {
-        return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);
-      });
+//      this.$el.on('click.starrr', 'span', function(e) {
+//        return _this.setRating(_this.$el.find('span').index(e.currentTarget) + 1);
+//      });
       this.$el.on('starrr:change', this.options.change);
     }
 

@@ -11,6 +11,7 @@
         <script src="js/javascript.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/rating.js"></script>
+        <script src="js/rating2.js"></script>
         
         
     </div><!--   WRAPPER ends starts in header-->

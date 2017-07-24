@@ -5,6 +5,7 @@
                                 
                                 include("db.php");
                                 $post_id = $_GET['id'];
+                                $user_id = $_SESSION['user_id'];
                                 $run = $conn->prepare("select * from posts where post_id = $post_id");
                                 $run->execute();
                                 while($row = $run->fetch(PDO::FETCH_ASSOC)){
@@ -32,6 +33,19 @@
                             </div>
                             
                           <?php if(isset($_SESSION['user_id'])){ ?>
+                          <div class="ratings">
+                            
+                            <label><input type="radio" id="rating" name="star" value="1"></label> 
+                            <label><input type="radio" id="rating" name="star" value="2"></label>
+                            <label><input type="radio" id="rating" name="star" value="3"></label>
+                            <label><input type="radio" id="rating" name="star" value="4"></label>
+                            <label><input type="radio" id="rating" name="star" value="5"></label>
+                            <input type="hidden" name="post" value="<?php echo $post_id; ?>">
+                            <input type="hidden" name="user" value="<?php echo $user_id; ?>">
+                           <span class="info" style="color:green"></span>
+                          </div>
+                          
+                            
                            <form id="comments-form" method="post">
                                 
                                 
@@ -46,7 +60,7 @@
                                 </div>
                             </form>
                             <?php } else {
-                                    echo "<strong>Please login to leave comments</strong>";
+                                    echo "<strong>Please login to leave comments or rating</strong>";
                                 } ?>
                         </div>
 

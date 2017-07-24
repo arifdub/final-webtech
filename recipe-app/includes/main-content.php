@@ -1,7 +1,7 @@
 <div class="row">
 <?php 
 include("db.php");
-$run = $conn->prepare("select posts.post_id, posts.post_pic, posts.post_title, posts.post_desc, posts.date, AVG(ratings.rating) as arating from posts left join ratings on posts.post_id = ratings.post_id group by post_id order by arating Desc ");
+$run = $conn->prepare("select posts.post_id, posts.post_pic, posts.post_title, posts.post_desc, posts.date, users.username, AVG(ratings.rating) as arating from posts left join ratings on posts.post_id = ratings.post_id inner join users on users.user_id = posts.user_id group by posts.post_id order by arating Desc ");
 $run->execute();
 while($row = $run->fetch(PDO::FETCH_ASSOC)){ 
 ?>
@@ -16,19 +16,16 @@ while($row = $run->fetch(PDO::FETCH_ASSOC)){
 
 
             <div class="container-fluid">
-                
-                
-
                 <div class="row lead">
                     
-                <div id="hearts-existing" class="starrr" data-rating="<?php echo $row['arating']; ?>"></div>
+                    <div id="hearts-existing" class="starrr" data-rating="<?php echo round($row['arating']); ?>"></div>
                     
                 </div>
             </div>
             <div>
-               <!--
-                <p>Uploaded by: <span style="color:blue;"><?php ?></span> </p>
-                <p>Date: <?php echo $row['date']; ?></p> -->
+               
+                <p>Uploaded by: <span style="color:blue;"><?php echo $row['username']; ?></span> </p>
+                <p>Date: <?php echo $row['date']; ?></p> 
             </div>
         </div>
     </div><!--col-md-4-->

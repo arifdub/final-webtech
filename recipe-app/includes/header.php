@@ -9,6 +9,8 @@
      <link href="css/bootstrap-theme.min.css" rel="stylesheet">
      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
       <link href="css/styling.css" rel="stylesheet">
+<!--      <link href="css/rating.css" rel="stylesheet">-->
+     <link href="css/rating2.css" rel="stylesheet">
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
       <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   </head>

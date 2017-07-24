@@ -123,3 +123,34 @@ $(document).ready(function(){
 //    });
 //
 //});
+//rating
+//var logID = 'log',
+//  log = $('<div id="'+logID+'"></div>');
+//$('body').append(log);
+//  $('[type*="radio"]').change(function () {
+//    var me = $(this);
+//    log.html(me.attr('value'));
+//  });
+
+$(document).ready(function(){
+        $("input[type='radio']").click(function(){
+            var rating = $("input[name='star']:checked").val();
+            var post = $("input[name='post']").val();
+            var user = $("input[name='user']").val();
+            if(rating){
+               $.ajax({
+                   type: 'post',
+                   url: 'rating.php',
+                   data: {rate: rating, post: post, user: user },
+                   success: function(data){
+                        $('.info').html(data)
+               },
+                   error: function(){
+                       $(".info").html("<div class='alert alert-danger'>error sending rating</div>");
+                   }
+               })
+                
+            }
+        });
+        
+    });
