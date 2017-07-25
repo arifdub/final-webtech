@@ -3,15 +3,14 @@
             <!-- Blog Search Well -->
                 <div class="well search-well">
                     <h4>Find a Recipe</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                Search
-                        </button>
-                        </span>
-                    </div>
-                    <!-- /.input-group -->
+                    
+                       <form action="http://localhost:8888/Final-Project/recipe-app/?search" method="get" class="form-inline">
+                           <div class="form-group">
+                            <input type="text" class="form-control" name="search">
+                                <input class="btn btn-default" type="submit" value="Search">
+                            </div>
+                        </form>
+                    
                 </div>
 
                 <!-- Blog Categories Well -->
@@ -28,7 +27,7 @@
                                         
                                     
                                 ?>
-                                <li><a href="#"><?php echo $row['cat_name']; } ?></a>
+                                <li><a href="http://localhost:8888/Final-Project/recipe-app/?catagory=<?php echo $row['cat_id']; ?>" ><?php echo $row['cat_name']; } ?></a>
                                 
                                 </li>
                                 

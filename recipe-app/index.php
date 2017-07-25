@@ -14,7 +14,12 @@
             <?php
                 if (isset($_GET["id"])){
                     include("includes/single.php");
-                } else {
+                } elseif(isset($_GET["search"])){
+                    include("includes/search.php"); 
+                
+                } elseif(isset($_GET["catagory"])){
+                    include("includes/catagory.php"); 
+                }else {
                     include("includes/main-content.php"); 
                 }
             ?>

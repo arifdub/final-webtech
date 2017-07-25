@@ -58,7 +58,7 @@ if ($run->rowCount() > 0){
 $activation = bin2hex(openssl_random_pseudo_bytes(16));
 
 //inserting record in users table in database
-$sql = "INSERT INTO users(`username`, `email`,`password`, `activation`,`user_pic`) VALUES (:username, :email, :password, '$activation', 'user_default.jpg')";
+$sql = "INSERT INTO users(`username`, `email`,`password`, `activation`,`user_pic`, `admin`) VALUES (:username, :email, :password, '$activation', 'user_default.jpg', 0)";
 $run = $conn->prepare($sql);
 $run->bindParam(':username',$username);
 $run->bindParam(':email',$email);

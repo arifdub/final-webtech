@@ -68,7 +68,30 @@ html,body{
 .content{
     float: right;
 }
+.img-full{
+    width: 400px;
+    height: 300px;
+}
+/*rating system */
 
+#rating-ul ul{
+    margin: 0;
+    
+    padding:0;
+    
+    
+}
+#rating-ul ul, li{
+    list-style-type: none;
+    color: red;
+    
+}
+.fa-star{
+    padding-right: 5px;
+}
+#ratings input[type='radio']{
+    display: none;
+}
 /*Style the footer*/
 .footer{
     

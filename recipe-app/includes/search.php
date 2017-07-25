@@ -1,7 +1,8 @@
 <div class="row">
 <?php 
 include("db.php");
-$run = $conn->prepare("select posts.post_id, posts.post_pic, posts.post_title, posts.post_desc, posts.date, users.username, AVG(ratings.rating) as arating, count(ratings.rating) as count_post from posts left join ratings on posts.post_id = ratings.post_id inner join users on users.user_id = posts.user_id group by posts.post_id order by arating Desc ");
+$search = $_GET['search'];
+$run = $conn->prepare("select posts.post_id, posts.post_pic, posts.post_title, posts.post_desc, posts.date, users.username, AVG(ratings.rating) as arating, count(ratings.rating) as count_post from posts left join ratings on posts.post_id = ratings.post_id inner join users on users.user_id = posts.user_id where post_desc like '%$search%' group by posts.post_id order by arating Desc");
 $run->execute();
 while($row = $run->fetch(PDO::FETCH_ASSOC)){ 
 ?>

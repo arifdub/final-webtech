@@ -28,11 +28,23 @@ if($error){
     } else {
         
         $row = $run->fetch(PDO::FETCH_ASSOC);
+        if($row['admin']==1){
+            $_SESSION['admin'] = $row['admin'];
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            $_SESSION['user_pic'] = $row['user_pic'];
+            echo "success";
+            header("admin.php");
+        } else {
+            
+        
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['username'] = $row['username'];
         $_SESSION['email'] = $row['email'];
         $_SESSION['user_pic'] = $row['user_pic'];
         echo "success";
+        }
     }
     
 }

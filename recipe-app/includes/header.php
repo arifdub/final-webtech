@@ -23,7 +23,7 @@
             
               <div class="navbar-header">
               
-                  <a class="navbar-brand" href="index.php">Online Recipes</a>
+                  <a class="navbar-brand" href="index.php">Up Web Skills</a>
                   <button type="button" class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse">
                       <span class="sr-only">Toggle navigation</span>
                       <span class="icon-bar"></span>
@@ -48,6 +48,10 @@
                     <li><a href="profile.php">My Profile</a></li>
                     <li><a href="myposts.php">My Posts</a></li>
                     <li><a href="newpost.php">New Posts</a></li>
+                    <?php if(isset($_SESSION['admin'])){ ?>
+    
+                    <li><a href="admin/admin.php">Admin Panel</a></li>
+                    <?php } ?>
                     <li role="separator" class="divider"></li>
                     <li><a href="logout.php?logout=1">LogOut</a></li>
                    <?php } ?>

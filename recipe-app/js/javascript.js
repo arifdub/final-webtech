@@ -32,6 +32,9 @@ $("#loginform").submit(function(event){
         success: function(data){
             if(data == 'success'){
                 window.location = "profile.php";
+            }else if(data =='adminlogin'){
+                window.location = "admin.php";
+            
             } else{
                 $("#loginmessage").html(data);
             }
