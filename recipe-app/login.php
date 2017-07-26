@@ -28,12 +28,16 @@ if($error){
     } else {
         
         $row = $run->fetch(PDO::FETCH_ASSOC);
+        $user = $row['user_id'];
+        $last = $conn->prepare("update users set last_seen = NOW() where user_id =$user");
+        $last->execute();
         if($row['admin']==1){
             $_SESSION['admin'] = $row['admin'];
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['user_pic'] = $row['user_pic'];
+            
             echo "success";
             header("admin.php");
         } else {

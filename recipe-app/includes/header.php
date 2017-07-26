@@ -50,7 +50,7 @@
                     <li><a href="newpost.php">New Posts</a></li>
                     <?php if(isset($_SESSION['admin'])){ ?>
     
-                    <li><a href="admin/admin.php">Admin Panel</a></li>
+                    <li><a href="admin/index.php">Admin Panel</a></li>
                     <?php } ?>
                     <li role="separator" class="divider"></li>
                     <li><a href="logout.php?logout=1">LogOut</a></li>

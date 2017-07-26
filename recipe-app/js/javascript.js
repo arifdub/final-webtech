@@ -47,27 +47,8 @@ $("#loginform").submit(function(event){
     });
 });
 
-//add new catagory form
 
-$("#add_catagory").submit(function(event){
-    event.preventDefault();
-    var dataform = $(this).serializeArray();
-    $.ajax({
-        url:'add_catagory.php',
-        type: 'post',
-        data: dataform,
-        success: function(data){
-            if(data){
-                $("#catmessage").html(data);
-            }
-            
-        },
-        error: function(){
-            $("#catmessage").html("<div class='alert alert-danger'>There was problem calling ajax call please try again</div>");
-        }
-        
-    });
-});
+
 //leaving comments ajax call
 $(document).ready(function(){
     $("#comments-form").on('submit', function(event){
@@ -93,48 +74,8 @@ $(document).ready(function(){
 });
 
 
-//add new post
-//$(document).ready(function(){
-//    
-//
-//$("#add_new_post").on('submit',function(event){
-//    event.preventDefault();
-//    var dataform = new dataform(this);
-//    $.ajax({
-//        url:'add_new_post.php',
-//        type: 'post',
-//        
-//        data: dataform,
-//        cache:false,
-//        contentType: false,
-//        processData: false,
-//        success: function(data){
-//            if(data){
-//                $("#postmessage").html(data);
-//            }
-//            
-//        },
-//        error: function(){
-//            $("#postmessage").html("<div class='alert alert-danger'>There was problem calling ajax call please try again</div>");
-//        }
-//        
-//    });
-//});
-//
-//$("#post_pic").on("change", function() {
-//        $("#add_new_post").submit();
-//    });
-//
-//});
-//rating
-//var logID = 'log',
-//  log = $('<div id="'+logID+'"></div>');
-//$('body').append(log);
-//  $('[type*="radio"]').change(function () {
-//    var me = $(this);
-//    log.html(me.attr('value'));
-//  });
 
+//saving rating into database
 $(document).ready(function(){
         $("input[type='radio']").click(function(){
             var rating = $("input[name='star']:checked").val();
