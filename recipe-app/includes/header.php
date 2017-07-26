@@ -34,9 +34,9 @@
               </div>
               <div class="navbar-collapse collapse" id="navbarCollapse">
                   <ul class="nav navbar-nav">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
                     
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Contact us</a></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                   <?php if(!isset($_SESSION['user_id'])){ ?>
@@ -45,15 +45,15 @@
                     <?php   }else{ ?>
                     <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="profile.php">My Profile</a></li>
-                    <li><a href="myposts.php">My Posts</a></li>
-                    <li><a href="newpost.php">New Posts</a></li>
+                    <li><a href="profile.php"><i class='fa fa-user'></i> My Profile</a></li>
+                    <li><a href="myposts.php"><i class="fa fa-newspaper-o" aria-hidden="true"></i> My Posts</a></li>
+                    <li><a href="newpost.php"><i class="fa fa-newspaper-o" aria-hidden="true"></i>     New Posts</a></li>
                     <?php if(isset($_SESSION['admin'])){ ?>
     
-                    <li><a href="admin/index.php">Admin Panel</a></li>
+                    <li><a href="admin/index.php"><i class='fa fa-user'></i> Admin Panel</a></li>
                     <?php } ?>
                     <li role="separator" class="divider"></li>
-                    <li><a href="logout.php?logout=1">LogOut</a></li>
+                      <li><a href="logout.php?logout=1"><i class='fa fa-power-off'></i> Logout</a></li>
                    <?php } ?>
                   </ul>
                   </li>
