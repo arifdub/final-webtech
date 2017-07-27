@@ -33,9 +33,57 @@ html,body{
 }
 .main-area{
     
-    padding-top: 50px;
+    margin-top: 60px;
     
     
+  
+}
+.top-top{
+    
+    height: 100px;
+    position: relative;
+    
+}
+.profile-div{
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.profile-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    margin-bottom: 20px;
+       
+    
+}
+.top-text-ad{
+    position: absolute;
+    top: 10px;
+    left: 450px;
+    bottom: 100px;
+    margin: 0 auto;
+    color: #fff;
+    
+    
+}
+.banner-img{
+    height: 100%;
+    width: 100%;
+    
+}
+.side-add{
+    height: 300px;
+    position: relative;
+}
+.text-side-ad{
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    bottom: 100px;
+    margin: 0 auto;
+    color: #fff;
     
 }
 .activate{
@@ -49,7 +97,7 @@ html,body{
     background-color: rgb(114,190,35);   
 }
 .search-well, .recipe-area{
-    margin-top: 80px;
+    margin-top: 10px;
 }
 .starrr{
     color: red;

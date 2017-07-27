@@ -5,7 +5,15 @@
 ?>
    
    <div class="container main-area">
+   
     <div class="row">
+            <div class="col-md-12 top-banner">
+           
+               <a href="https://placeholder.com"><img src="http://lorempixel.com/1100/100/" class="banner-img"></a>
+               <div class="top-text-ad">
+                   <h2>Place Your ad here</h2>
+               </div>
+       </div>
 
             <!-- Recipe Display Column -->
         <div class="col-md-8 recipe-area">
@@ -79,7 +87,7 @@
                   
               </div>
               <div class="modal-footer">
-                  <input class="btn green" name="login" type="submit" value="Login">
+                  <input class="btn green" name="login" id="login-btn" type="submit" value="Login">
                 <button type="button" class="btn btn-default" data-dismiss="modal">
                   Cancel
                 </button>

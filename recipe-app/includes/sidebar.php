@@ -37,7 +37,11 @@
                     </div>
                     <!-- /.row -->
                 </div>
-
-               
+            <div class="side-add">
+               <a href="https://placeholder.com"><img src="http://lorempixel.com/400/200/" class="banner-img"></a>
+               <div class="text-side-ad">
+                   <h2>Place Your ad here</h2>
+               </div>
+               </div>
 
             

@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge">
-<!--                                        to show total users online          -->
+<!--                                        to show total users online         -->
                                         <?php 
                                             $run =$conn->prepare("select count(*) as total from users where last_seen > DATE_SUB(NOW(), INTERVAL 30 MINUTE)"); 
                                             $result = $run->execute();

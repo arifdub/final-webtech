@@ -1,7 +1,7 @@
      
          <div class="footer">
           <div class="container">
-              <p> Copyright &copy; Online Recipes <?php $today = date("Y"); echo $today?>.</p>
+              <p> Copyright &copy; UpwebSkills <?php $today = date("Y"); echo $today?>.</p>
           </div>
     </div>
 

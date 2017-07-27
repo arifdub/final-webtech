@@ -15,7 +15,31 @@ if(!isset($_SESSION['user_id'])){
      <div class="row profile">
               <div class="col-md-offset-3 col-md-6">
 
-                  <h2>User's Profile:</h2>
+                  <h2 class="text-center">User's Profile</h2>
+                  <div class="profile-pic center-block">
+                    <?php 
+                      include("db.php");    
+                      $user_id = $_SESSION['user_id'];
+                      $run= $conn->prepare("select * from users where user_id = $user_id ");
+                      $run->execute();
+                      $row = $run->fetch(PDO::FETCH_ASSOC);
+                          
+                      
+                      
+                      ?>
+                     <form method="post" action="change-profile.php" enctype="multipart/form-data">
+                         <div class="form-group ">
+                              <div class="profile-div center-block">
+                                  <img class="profile-img " src="img/<?php echo $row['user_pic']; ?>" >
+                              </div>
+                              <input type="file" name="profile_pic" hidden="hidden">
+                             <input name="id" type="text" hidden="hidden" value="<?php echo $row['user_id']; ?> " >
+                             <input type="submit" value="Upload Photo" name="upload_pic" class="btn btn-default">
+                         </div>
+                     </form>
+                     <?php ?>
+                  </div>
+                  
                   <div class="table-responsive table-striped">
                       <table class="table table-hover table-condensed table-bordered">
                           <tr data-target="#updateusername" data-toggle="modal">

@@ -2,6 +2,7 @@
 $("#signupform").submit(function(event){
    event.preventDefault();
 //    saving form data in variable
+    
    var dataform = $(this).serializeArray();
     $.ajax({
        url: "signup.php",
@@ -23,7 +24,8 @@ $("#signupform").submit(function(event){
 //login form
 
 $("#loginform").submit(function(event){
-    event.preventDefault();
+   event.preventDefault();
+    
     var dataform = $(this).serializeArray();
     $.ajax({
         url:'login.php',
