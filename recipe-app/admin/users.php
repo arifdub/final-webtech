@@ -84,9 +84,9 @@ include("../db.php");
                          <td><?php echo $row['email']; ?></td>
                          <td><?php echo $row['activation']; ?></td>
                          <?php if($row['activation']=="activated") { ?>
-                         <td><a class="btn btn-danger" href="block_user.php?id=<?php echo $row['user_id']; ?>" onclick="return confirm('User will be blocked ?');" ><i class="fa fa-ban" aria-hidden="true"> Block User</i></a></td>
+                         <td><a class="btn btn-link"  href="block_user.php?id=<?php echo $row['user_id']; ?>" onclick="return confirm('User will be blocked ?');" ><i class="fa fa-ban" aria-hidden="true"></i><strong> Block User</strong></a></td>
                          <?php } else { //end if actvation check ?>
-                         <td><a class="btn btn-success" href="unblock_user.php?id=<?php echo $row['user_id']; ?>" onclick="return confirm('User will be unblocked ?');" ><i class="fa fa-unlock-alt" aria-hidden="true"> Unblock User</i></a></td>
+                         <td><a class="btn btn-link" href="unblock_user.php?id=<?php echo $row['user_id']; ?>" onclick="return confirm('User will be unblocked ?');" ><i class="fa fa-unlock-alt" aria-hidden="true"></i><strong> Unblock User</strong></a></td>
                          <?php } ?>
                          <?php } } ?><!--end while loop-->
                      </tr>

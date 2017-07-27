@@ -13,6 +13,8 @@
      <link href="css/rating2.css" rel="stylesheet">
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
       <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+      <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+      <script>tinymce.init({ selector:'#new-post' });</script>
   </head>
   <body>
    <div class="wrap">

@@ -119,10 +119,12 @@
                                         <div class="huge">
 <!--                                        to show total users online          -->
                                         <?php 
-                                            $run2 =$conn->prepare("select count(*) from users where last_seen > DATE_SUB(NOW(), INTERVAL 5 MINUTE) "); 
-                                            $run2->execute();
-                                            $rowcount =$run2->rowCount();
-                                            echo $rowcount;
+                                            $run =$conn->prepare("select count(*) as total from users where last_seen > DATE_SUB(NOW(), INTERVAL 30 MINUTE)"); 
+                                            $result = $run->execute();
+                                            while($row =$run->fetch(PDO::FETCH_ASSOC)){
+                                                echo $row['total'];
+                                            }
+                                           
                                         ?>
                                         </div>
                                         <div>Users Online</div>

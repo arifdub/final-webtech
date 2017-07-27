@@ -14,16 +14,8 @@ if(!isset($_SESSION['user_id'])){
          <div class="row">
               <div class="col-md-10 col-md-offset-1">
                   
-                  <form class="form-inline" id="add_catagory" method="post">
-                      <h3>Add a New Catagory</h3>
-                      <div id="catmessage"></div>
-                      <div class="form-group">
-                          <label for="title" class="">Catagory Name</label>
-                          <input type="text" name="catname" class="form-control">
-                          <input type= "submit" class="btn btn-success" value="Add Catagory">
-                      </div>
-                  </form>
-                  <h2 class="text-center">Add a New Recipe</h2>
+                  
+                  <h2 class="text-center">Add a New Post</h2>
                   <div id="postmessage"></div>
                   <form id="add_new_post" method="post" enctype="multipart/form-data" action="add_new_post.php">
                      
@@ -33,7 +25,7 @@ if(!isset($_SESSION['user_id'])){
                       </div>
                      <div class="form-group">
                           <label for="desc" class="">Description</label>
-                          <textarea name="post_desc" class="form-control" rows="15"></textarea>
+                          <textarea id="new-post" name="post_desc" class="form-control" rows="15"></textarea>
                       </div>
                       <div class="form-group">
                           <label for="catagories" class="">Catagories</label>

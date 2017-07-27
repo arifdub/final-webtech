@@ -2,7 +2,7 @@
 
             <!-- Blog Search Well -->
                 <div class="well search-well">
-                    <h4>Find a Recipe</h4>
+                    <h4>Find a Post</h4>
                     
                        <form action="http://localhost:8888/Final-Project/recipe-app/?search" method="get" class="form-inline">
                            <div class="form-group">
