@@ -1,0 +1,241 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Jul 28, 2017 at 02:53 AM
+-- Server version: 5.6.35
+-- PHP Version: 7.1.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `online-app`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `catagories`
+--
+
+CREATE TABLE `catagories` (
+  `cat_id` int(11) NOT NULL,
+  `cat_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `catagories`
+--
+
+INSERT INTO `catagories` (`cat_id`, `cat_name`) VALUES
+(6, 'PHP'),
+(7, 'javascript'),
+(8, 'HTML'),
+(9, 'CSS'),
+(10, 'DATABASES'),
+(11, 'MYSQL'),
+(12, 'PDO'),
+(13, 'JAVA'),
+(14, 'jQuery'),
+(15, 'WordPress'),
+(16, 'JOOMLA'),
+(17, 'SAAS'),
+(18, 'ANGULAR JS'),
+(19, 'cPanel'),
+(20, 'Drupal'),
+(21, 'SQL'),
+(22, 'XML'),
+(23, 'Bootstrap');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `comment_id` int(11) NOT NULL,
+  `comment` text NOT NULL,
+  `post_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `comment`, `post_id`, `user_id`, `date`) VALUES
+(1, 'cmment', 3, 2, '2017-07-18 09:01:47'),
+(2, 'commentdfdfd', 0, 2, '2017-07-18 09:16:53'),
+(3, 'hello', 0, 2, '2017-07-18 10:36:58'),
+(4, 'this is new comment', 42, 2, '2017-07-18 10:41:38'),
+(5, 'hello comment', 50, 2, '2017-07-18 11:36:38'),
+(6, 'this is new comment', 50, 2, '2017-07-18 11:45:22'),
+(7, 'another comment', 42, 2, '2017-07-18 11:53:20'),
+(8, 'this', 42, 2, '2017-07-18 11:55:31'),
+(10, 'olol', 42, 2, '2017-07-18 11:56:57'),
+(11, 'this', 42, 2, '2017-07-18 11:57:48'),
+(12, 'this', 42, 2, '2017-07-18 11:57:51'),
+(13, 'this is ', 43, 2, '2017-07-18 12:01:47'),
+(14, 'comment again', 43, 2, '2017-07-18 13:38:28'),
+(15, 'more comments', 43, 2, '2017-07-18 13:41:13'),
+(34, 'this is comment ', 70, 4, '2017-07-27 01:54:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `post_id` int(11) NOT NULL,
+  `post_title` varchar(256) NOT NULL,
+  `post_desc` text NOT NULL,
+  `cat_id` int(11) NOT NULL,
+  `post_pic` varchar(256) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`post_id`, `post_title`, `post_desc`, `cat_id`, `post_pic`, `user_id`, `date`) VALUES
+(70, 'What is PDO in php ?', 'The PHP Data Objects (PDO) extension defines a lightweight, consistent interface for accessing databases in PHP. Each database driver that implements the PDO interface can expose database-specific features as regular extension functions. Note that you cannot perform any database functions using the PDO extension by itself; you must use a database-specific PDO driver to access a database server.\r\n\r\nPDO provides a data-access abstraction layer, which means that, regardless of which database you&#39;re using, you use the same functions to issue queries and fetch data. PDO does not provide a database abstraction; it doesn&#39;t rewrite SQL or emulate missing features. You should use a full-blown abstraction layer if you need that facility.\r\n\r\nPDO ships with PHP 5.1, and is available as a PECL extension for PHP 5.0; PDO requires the new OO features in the core of PHP 5, and so will not run with earlier versions of PHP.', 6, '1-ajTdzWkHl8Vb0XcJ6IbAPA.png', 4, '2017-07-27 16:44:44'),
+(75, 'What is the difference between .htm and .html files?', '.htm and .html are the same\r\nThere is absolutely no difference between .html and .htm files. They can be used interchangeably. Thus, you can rename a .html file to .htm and vice versa and the browser program will display it the same way.\r\nThe only difference is the file extension.\r\nSo why have two file extensions for the same kind of file? That, my friend, is because once upon a time, on many operating systems, file extensions could only be of three characters. This was especially true for Microsoft Windows, the most popular OS.\r\nThus, a lot of web pages created in &ldquo;the good old days&rdquo; (just a decade back or so) will have .htm file extension. And, I suppose, many old-schoolers would still be using .htm instead of .html.\r\nWhich is better and which one should you use?\r\nPersonally, I stopped using the three letter file extensions long time back and suggest you do the same. .htm seems a bit ancient in my opinion.\r\nFinally, here is another bit of information. Files with .html or .htm extension may contain server-side code too. Thus, one can put PHP code and have it run with these files extensions. This is done by changing the server settings so that the files are parsed through the PHP interpreter. The web browser, however, will never show server-side code and present only HTML to the viewer.', 8, 'difference-html-htm.png', 4, '2017-07-27 13:07:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `rating_id` int(11) NOT NULL,
+  `rating` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `post_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ratings`
+--
+
+INSERT INTO `ratings` (`rating_id`, `rating`, `user_id`, `post_id`) VALUES
+(101, 4, 3, 61),
+(102, 4, 3, 61),
+(103, 2, 3, 62),
+(104, 2, 3, 62),
+(105, 2, 3, 62),
+(106, 2, 3, 62),
+(107, 2, 3, 62),
+(108, 5, 3, 66),
+(109, 4, 3, 68),
+(110, 5, 2, 68),
+(111, 5, 2, 62),
+(112, 1, 2, 61),
+(113, 1, 2, 66),
+(114, 2, 3, 73),
+(115, 4, 3, 69),
+(116, 5, 3, 70),
+(117, 4, 3, 71),
+(118, 4, 2, 69),
+(119, 5, 2, 70),
+(120, 2, 2, 72),
+(121, 5, 2, 73),
+(122, 5, 4, 69),
+(123, 4, 4, 75);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `activation` varchar(50) NOT NULL,
+  `user_pic` varchar(40) NOT NULL,
+  `admin` int(11) NOT NULL,
+  `last_seen` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `activation`, `user_pic`, `admin`, `last_seen`) VALUES
+(2, 'arifdub', 'arifdub@me.com', 'A123456', 'blocked', 'user_default.jpg', 0, '2017-07-26 23:24:05'),
+(3, 'arifdub1', 'arifdub@gmail.com', 'A123456', 'activated', 'me.jpg', 0, '2017-07-27 19:12:29'),
+(4, 'admin', 'arifdub@icloud.com', 'Password1', 'activated', 'muhammad_arif_profile.jpg', 1, '2017-07-27 21:00:42');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `catagories`
+--
+ALTER TABLE `catagories`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`comment_id`);
+
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`post_id`);
+
+--
+-- Indexes for table `ratings`
+--
+ALTER TABLE `ratings`
+  ADD PRIMARY KEY (`rating_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `catagories`
+--
+ALTER TABLE `catagories`
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+--
+-- AUTO_INCREMENT for table `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `rating_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
