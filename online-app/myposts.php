@@ -38,7 +38,7 @@ if(!isset($_SESSION['user_id'])){
                      <?php while($row = $run->fetch(PDO::FETCH_ASSOC)){ ?>
                      <tr>
                         
-                         <td><img src="img/<?php echo $row['post_pic']; ?>" width="50" height="50"></td>
+                         <td><img src="img/<?php echo $row['post_pic']; ?>" width="50" height="50" alt="post_image"></td>
                          <td><?php echo $row['post_title']; ?></td>
                          <td><?php echo substr($row['post_desc'],0, 100) ?></td>
                          <td><a class="btn btn-info" href="edit_post.php?id=<?php echo $row['post_id']; ?>" ><span class='glyphicon glyphicon-edit'></span></a></td>

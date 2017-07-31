@@ -25,7 +25,8 @@
                     $run->execute();
                     while($row = $run->fetch(PDO::FETCH_ASSOC)){
                 ?>
-                <li><a href="index.php?catagory=<?php echo $row['cat_id']; ?>" ><?php echo $row['cat_name']; } ?></a>
+                <li> <a href="index.php?catagory=<?php echo $row['cat_id']; ?>" ><?php echo $row['cat_name']; ?></a>
+                <?php } ?>
 
                 </li>
 
@@ -37,7 +38,7 @@
 </div>
 <!--display add here-->
 <div class="side-add">
-   <a href="#"><img src="http://lorempixel.com/400/200/" class="banner-img"></a>
+   <a href="#"><img src="http://lorempixel.com/400/200/" class="banner-img" alt="side-ad"></a>
    <div class="text-side-ad">
        <h2>Place Your ad here</h2>
    </div>

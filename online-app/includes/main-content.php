@@ -10,7 +10,7 @@
 
         <div class="col-xs-12 well">
            <div class="post-img col-md-3">
-               <a href="index.php?id=<?php echo $row['post_id']; ?>"><img class= "recipe-pic" src="img/<?php echo $row['post_pic']; ?>" width="100%" height="100%"></a>
+               <a href="index.php?id=<?php echo $row['post_id']; ?>"><img class= "post-pic" src="img/<?php echo $row['post_pic']; ?>" alt="post_image"></a>
              </div>
             <div class="content col-md-9">
                 <a href="index.php?id=<?php echo $row['post_id']; ?>"><h4><?php echo $row['post_title']; ?></h4></a>
@@ -21,7 +21,7 @@
                 <div class="container-fluid">
                     <div class="row lead">
 <!--show rating star average-->
-                        <div id="hearts-existing" class="starrr" data-rating="<?php echo round($row['avgrating']); ?>"></div> <span style="font-size:15px;"><?php echo $row['count_post']; ?> Review(s)</span>
+                        <div class="starrr" data-rating="<?php echo round($row['avgrating']); ?>"></div> <span style="font-size:15px;"><?php echo $row['count_post']; ?> Review(s)</span>
 
                     </div>
                 </div>

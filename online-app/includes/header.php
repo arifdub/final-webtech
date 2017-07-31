@@ -19,7 +19,7 @@
   <body>
    <div class="wrap">
     <!--Navigation Bar-->  
-      <nav role="navigation" class="navbar navbar-custom navbar-fixed-top">
+      <nav class="navbar navbar-custom navbar-fixed-top">
       
           <div class="container-fluid">
             

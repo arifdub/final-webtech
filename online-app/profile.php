@@ -34,7 +34,7 @@ if(!isset($_SESSION['user_id'])){
                          <div class="form-group ">
                               <div class="profile-div center-block">
                                  
-                                  <img class="profile-img " src="img/<?php echo $row['user_pic']; ?>" >
+                                  <img class="profile-img " src="img/<?php echo $row['user_pic']; ?>" alt="profile_pic">
                                   
                               </div>
                               

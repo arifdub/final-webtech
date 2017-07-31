@@ -9,7 +9,7 @@
     <div class="row">
             <div class="col-md-12 top-banner">
            
-               <a href="#"><img src="http://lorempixel.com/1100/100/" class="banner-img"></a>
+               <a href="#"><img src="http://lorempixel.com/1100/100/" class="banner-img" alt="banner-ad"></a>
                <div class="top-text-ad">
                    <h2>Place Your ad here</h2>
                </div>
@@ -57,7 +57,7 @@
                   <button class="close" data-dismiss="modal">
                     &times;
                   </button>
-                  <h4 id="myModalLabel">
+                  <h4>
                     Login: 
                   </h4>
               </div>
@@ -109,8 +109,8 @@
                   <button class="close" data-dismiss="modal">
                     &times;
                   </button>
-                  <h4 id="myModalLabel">
-                    Sign up today and Upload a Recipe! 
+                  <h4>
+                    Sign up today 
                   </h4>
               </div>
               <div class="modal-body">
@@ -155,7 +155,7 @@
                   <button class="close" data-dismiss="modal">
                     &times;
                   </button>
-                  <h4 id="myModalLabel">
+                  <h4>
                     Forgot Password? Enter your email address: 
                   </h4>
               </div>

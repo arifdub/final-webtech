@@ -33,6 +33,11 @@ html,body{
     position: relative;
     
 }
+/*post box area*/
+.post-img img{
+    width: 100%;
+    
+}
 /*profile page*/
 .profile-div{
     width: 200px;
